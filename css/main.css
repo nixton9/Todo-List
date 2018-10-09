@@ -28,6 +28,7 @@ body{
     border-radius: 7px;
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     position: relative;
+    overflow:hidden;
 }
 
 .app-header{
@@ -48,10 +49,12 @@ body{
 
 .app-header h1{
     margin-left: 20px;
-    font-weight: 500;
-    font-size: 24px;
+    font-weight: 600;
+    font-size: 21px;
     text-transform: uppercase;
-    color:#3e3e3e;
+    color: #3e3e3e;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 
@@ -62,11 +65,23 @@ body{
 }
 
 .list-item .item-trash{
-    width:30px;
-    background-color:red;
+    width:45px;
+    background-color:#f44336;
     display:inline-block;
     text-align: center;
 }
+
+.item-trash:hover{
+    cursor: pointer;
+}
+
+.item-trash i{
+    color:#fff;
+    position: relative;
+    font-size: 15px;
+    top: 11px;
+}
+
 .list-item .item{
     display:inline-block;
 }
@@ -101,11 +116,11 @@ body{
   }
 
 .flex-child:nth-child(odd), #iteminput{
-    background: #f9f9f9;
+    background: #f1f1f1;
 }
 
 .flex-child:nth-child(even) {
-    background: #f7f7f7;
+    background: #f9f9f9;
 }
 
 .checked{
@@ -113,3 +128,14 @@ body{
     opacity: .4;
 }
 
+input[type="text"]:focus{
+    border:none !important;
+    box-shadow: none !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}

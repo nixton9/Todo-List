@@ -3,7 +3,9 @@ $('#iteminput').on("keypress", function(event){
     if(event.which == 13) {
         var userinput = $(this).val();
         var newEl = $('<div class="list-item flex-child"><div class="item-trash delete-item"><i class="fas fa-trash-alt"></i></div><div class="item"><p>'+userinput+'</p></div></div>');
-        $(newEl).hide().appendTo("#list").fadeIn(300);
+        $(".item-trash").hide();
+        $(newEl).children(".item-trash").hide();
+        $(newEl).hide().appendTo("#list").fadeIn(600);
         //$('#list').append(newEl);
         $(this).val('');
     }
@@ -33,10 +35,10 @@ $('#plus').on("click", function(){
 
 //CRIAR O SLIDE NO BOTAO DE APAGAR
 $(".item-trash").hide();
-$('.list-item').on("mouseover", function(){
+$('#list').on("mouseover", ".list-item", function(){
         $(this).children(".item-trash").show(200);
 })
 
-$('.list-item').on("mouseleave", function(){
+$('#list').on("mouseleave", ".list-item", function(){
     $(this).children(".item-trash").hide(200);
 })
